@@ -1,4 +1,5 @@
 import { Category } from '@/domain/entities'
+import { mockCategory } from '@/tests/domain/mocks'
 
 import { faker } from '@faker-js/faker'
 
@@ -33,5 +34,16 @@ describe('Category Entity', () => {
     expect(category.description).toEqual('')
     expect(category.is_active).toEqual(false)
     expect(category.created_at).toEqual(expect.any(Date))
+  })
+
+  it('should update a category with valid params', () => {
+    const category = mockCategory()
+    const updatedName = faker.word.noun()
+    const updatedDescription = faker.random.words()
+
+    category.update(updatedName, updatedDescription)
+
+    expect(category.name).toEqual(updatedName)
+    expect(category.description).toEqual(updatedDescription)
   })
 })
