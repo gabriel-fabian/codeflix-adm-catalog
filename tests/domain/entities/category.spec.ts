@@ -53,4 +53,11 @@ describe('Category Entity', () => {
 
     expect(category.is_active).toEqual(true)
   })
+
+  it('should deactivate a category', () => {
+    const category = mockCategory({ is_active: true })
+    category.deactivate()
+
+    expect(category.is_active).toEqual(false)
+  })
 })
