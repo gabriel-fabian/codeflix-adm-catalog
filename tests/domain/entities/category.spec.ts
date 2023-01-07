@@ -46,4 +46,11 @@ describe('Category Entity', () => {
     expect(category.name).toEqual(updatedName)
     expect(category.description).toEqual(updatedDescription)
   })
+
+  it('should activate a category', () => {
+    const category = mockCategory({ is_active: false })
+    category.activate()
+
+    expect(category.is_active).toEqual(true)
+  })
 })

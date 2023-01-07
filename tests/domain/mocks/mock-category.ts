@@ -1,12 +1,19 @@
 import { Category } from '@/domain/entities'
+
 import { faker } from '@faker-js/faker'
 
-export const mockCategory = (): Category => {
-  const props = {
-    name: faker.word.noun(),
-    description: faker.random.words(),
-    is_active: faker.datatype.boolean(),
+type mockProps = {
+  name?: string
+  description?: string
+  is_active?: boolean
+}
+
+export const mockCategory = (props?: mockProps): Category => {
+  const categoryProps = {
+    name: props?.name ?? faker.word.noun(),
+    description: props?.description ?? faker.random.words(),
+    is_active: props?.is_active ?? false,
     created_at: faker.date.recent()
   }
-  return new Category(props)
+  return new Category(categoryProps)
 }
