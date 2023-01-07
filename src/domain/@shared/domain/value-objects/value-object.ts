@@ -1,8 +1,10 @@
-export default class ValueObject<Value = any> {
-  protected _value: Value
+import { deepFreeze } from '@/domain/@shared/domain/utils'
+
+export default abstract class ValueObject<Value = any> {
+  protected readonly _value: Value
 
   constructor (value: Value) {
-    this._value = value
+    this._value = deepFreeze(value)
   }
 
   get value (): Value {
