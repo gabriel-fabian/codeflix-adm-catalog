@@ -8,8 +8,8 @@ type CategoryProps = {
 }
 
 export class Category extends Entity<CategoryProps> {
-  private readonly _name: string
-  private readonly _description: string
+  private _name: string
+  private _description: string
   private readonly _is_active: boolean
   private readonly _created_at: Date
 
@@ -35,5 +35,10 @@ export class Category extends Entity<CategoryProps> {
 
   get created_at (): Date {
     return this._created_at
+  }
+
+  update (name: string, description: string): void {
+    this._name = name
+    this._description = description
   }
 }
