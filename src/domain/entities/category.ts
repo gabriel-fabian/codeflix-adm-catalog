@@ -45,4 +45,8 @@ export class Category extends Entity<CategoryProps> {
   activate (): void {
     this._is_active = true
   }
+
+  deactivate (): void {
+    this._is_active = false
+  }
 }
