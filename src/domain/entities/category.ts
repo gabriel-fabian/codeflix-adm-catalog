@@ -10,7 +10,7 @@ type CategoryProps = {
 export class Category extends Entity<CategoryProps> {
   private _name: string
   private _description: string
-  private readonly _is_active: boolean
+  private _is_active: boolean
   private readonly _created_at: Date
 
   constructor (props: CategoryProps, id?: UniqueEntityId) {
@@ -40,5 +40,9 @@ export class Category extends Entity<CategoryProps> {
   update (name: string, description: string): void {
     this._name = name
     this._description = description
+  }
+
+  activate (): void {
+    this._is_active = true
   }
 }
