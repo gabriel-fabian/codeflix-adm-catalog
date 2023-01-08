@@ -4,6 +4,10 @@ import { mockCategory } from '@/tests/domain/mocks'
 import { faker } from '@faker-js/faker'
 
 describe('Category Entity', () => {
+  beforeEach(() => {
+    Category.validate = jest.fn()
+  })
+
   it('should construct a new category with all params', () => {
     const categoryProps = {
       id: faker.datatype.uuid(),
@@ -15,6 +19,7 @@ describe('Category Entity', () => {
 
     const category = new Category(categoryProps)
 
+    expect(Category.validate).toHaveBeenCalled()
     expect(category.id).toBeTruthy()
     expect(category.name).toEqual(categoryProps.name)
     expect(category.description).toEqual(categoryProps.description)
@@ -43,6 +48,7 @@ describe('Category Entity', () => {
 
     category.update(updatedName, updatedDescription)
 
+    expect(Category.validate).toHaveBeenCalledTimes(2)
     expect(category.name).toEqual(updatedName)
     expect(category.description).toEqual(updatedDescription)
   })
