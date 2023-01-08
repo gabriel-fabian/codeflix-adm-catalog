@@ -1,16 +1,16 @@
-import { ValidationError } from '@/domain/@shared/errors'
+import { EntityValidationError } from '@/domain/@shared/errors'
 import { Category } from '@/domain/entities'
 
 describe('Category Integration', () => {
   describe('create method', () => {
-    it('should throw a ValidationError when create with invalid params', () => {
+    it('should throw a EntityValidationError when create with invalid params', () => {
       expect(() => {
         new Category({ name: '' })
-      }).toThrowError(new ValidationError('The name is required'))
+      }).toThrowError(new EntityValidationError(JSON.stringify({ name: ['name should not be empty'] })))
 
       expect(() => {
         new Category({ name: 'c'.repeat(256) })
-      }).toThrowError(new ValidationError('The name must be less or equal than 255 characters'))
+      }).toThrowError(new EntityValidationError(JSON.stringify({ name: ['name must be shorter than or equal to 255 characters'] })))
     })
   })
 })

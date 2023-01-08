@@ -3,7 +3,7 @@ import { mockCategory } from '@/tests/domain/mocks'
 
 import { faker } from '@faker-js/faker'
 
-describe('Category Entity', () => {
+describe('Category', () => {
   beforeEach(() => {
     Category.validate = jest.fn()
   })
