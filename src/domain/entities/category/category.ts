@@ -1,7 +1,8 @@
 import { Entity, UniqueEntityId } from '@/domain/@shared/domain'
-import { ValidatorRules } from '../@shared/validators/validator-rules'
+import { EntityValidationError } from '@/domain/@shared/errors'
+import { makeCategoryValidator } from '@/domain/entities/validators'
 
-type CategoryProps = {
+export type CategoryProps = {
   name: string
   description?: string
   is_active?: boolean
@@ -29,9 +30,12 @@ export class Category extends Entity<CategoryProps> {
     this._description = description
   }
 
-  static validate (props: Omit<CategoryProps, 'created_at'>): void {
-    ValidatorRules.values(props.name, 'name').required().string().maxLength(255)
-    ValidatorRules.values(props.description, 'description').string()
+  static validate (props: CategoryProps): void {
+    const validator = makeCategoryValidator()
+    const isValid = validator.validate(props)
+    if (!isValid) {
+      throw new EntityValidationError(JSON.stringify(validator.errors))
+    }
   }
 
   activate (): void {
