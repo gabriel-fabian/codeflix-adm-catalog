@@ -42,7 +42,7 @@ describe('ValidatorRules', () => {
 
       expect(() => {
         validator.required()
-      }).not.toThrowError(new ValidationError(`The ${property} is required`))
+      }).not.toThrowError()
     })
   })
 
@@ -66,7 +66,7 @@ describe('ValidatorRules', () => {
 
       expect(() => {
         validator.string()
-      }).not.toThrowError(new ValidationError(`The ${property} must be a string`))
+      }).not.toThrowError()
     })
   })
 
@@ -83,7 +83,7 @@ describe('ValidatorRules', () => {
       }).toThrowError(new ValidationError(`The ${property} must be less or equal than ${maxLenght} characters`))
     })
 
-    it('should throw an error when param is greater than maxLenght', () => {
+    it('should not throw an error when param is valid', () => {
       const value = 'thisIsLowerThanMaxLength'
       const property = 'field'
       const maxLenght = 255
@@ -92,7 +92,31 @@ describe('ValidatorRules', () => {
 
       expect(() => {
         validator.maxLength(maxLenght)
-      }).not.toThrowError(new ValidationError(`The ${property} must be less or equal than ${maxLenght} characters`))
+      }).not.toThrowError()
+    })
+  })
+
+  describe('Boolean method', () => {
+    it('should throw an error when param is not a boolean', () => {
+      const value = 'notABoolean'
+      const property = 'field'
+
+      const validator = makeSut(value, property)
+
+      expect(() => {
+        validator.boolean()
+      }).toThrowError(new ValidationError(`The ${property} must be a boolean`))
+    })
+
+    it('should not throw when param is valid', () => {
+      const value = true
+      const property = 'field'
+
+      const validator = makeSut(value, property)
+
+      expect(() => {
+        validator.boolean()
+      }).not.toThrowError()
     })
   })
 
