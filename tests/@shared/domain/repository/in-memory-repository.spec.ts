@@ -1,4 +1,5 @@
 import { Entity, InMemoryRepository } from '@/@shared/domain'
+import NotFoundError from '@/@shared/errors/not-found-error'
 
 type StubEntityProps = {
   name: string
@@ -24,5 +25,13 @@ describe('InMemoryRepository', () => {
     await sut.insert(entity)
 
     expect(entity.toJSON()).toStrictEqual(sut.items[0].toJSON())
+  })
+
+  it('should throw error when entity not found', () => {
+    const sut = makeSut()
+
+    expect(sut.findById('fake_id')).rejects.toThrow(
+      new NotFoundError('Entity with ID fake_id not found')
+    )
   })
 })
