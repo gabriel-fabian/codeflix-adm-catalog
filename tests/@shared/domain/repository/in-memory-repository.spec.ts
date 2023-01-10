@@ -34,4 +34,17 @@ describe('InMemoryRepository', () => {
       new NotFoundError('Entity with ID fake_id not found')
     )
   })
+
+  it('should find an entity by id', async () => {
+    const sut = makeSut()
+    const entity = new StubEntity({
+      name: 'any_name',
+      price: 10
+    })
+    sut.items[0] = entity
+
+    const foundEntity = await sut.findById(entity.id)
+
+    expect(foundEntity).toStrictEqual(sut.items[0])
+  })
 })
