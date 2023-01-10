@@ -1,5 +1,5 @@
 import ValueObject from './value-object'
-import { InvalidUuidError } from '@/domain/@shared/errors'
+import { InvalidUuidError } from '@/@shared/errors'
 
 import { v4 as uuid, validate as uuidValidate } from 'uuid'
 

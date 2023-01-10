@@ -1,4 +1,4 @@
-import { UniqueEntityId } from '@/domain/@shared/domain'
+import { UniqueEntityId } from '@/@shared/domain'
 
 export default abstract class Entity<Props> {
   public readonly uniqueEntityId: UniqueEntityId

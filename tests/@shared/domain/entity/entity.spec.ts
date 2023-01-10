@@ -1,4 +1,4 @@
-import { Entity, UniqueEntityId } from '@/domain/@shared/domain'
+import { Entity, UniqueEntityId } from '@/@shared/domain'
 
 import { validate as uuidValidate } from 'uuid'
 

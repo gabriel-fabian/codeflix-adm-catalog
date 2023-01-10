@@ -1,4 +1,4 @@
-import { ClassValidator } from '@/domain/@shared/validators'
+import { ClassValidator } from '@/@shared/validators'
 
 import { IsNotEmpty, IsNumber, IsString, MaxLength } from 'class-validator'
 

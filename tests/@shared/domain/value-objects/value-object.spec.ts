@@ -1,4 +1,4 @@
-import { ValueObject } from '@/domain/@shared/domain'
+import { ValueObject } from '@/@shared/domain'
 
 import { faker } from '@faker-js/faker'
 

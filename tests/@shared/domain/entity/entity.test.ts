@@ -1,4 +1,4 @@
-import { EntityValidationError } from '@/domain/@shared/errors'
+import { EntityValidationError } from '@/@shared/errors'
 import { Category } from '@/domain/entities'
 
 describe('Category Integration', () => {

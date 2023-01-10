@@ -1,5 +1,5 @@
-import { UniqueEntityId } from '@/domain/@shared/domain/'
-import { InvalidUuidError } from '@/domain/@shared/errors'
+import { UniqueEntityId } from '@/@shared/domain/'
+import { InvalidUuidError } from '@/@shared/errors'
 
 import { faker } from '@faker-js/faker'
 

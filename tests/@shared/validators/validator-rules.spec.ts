@@ -1,5 +1,5 @@
-import { ValidationError } from '@/domain/@shared/errors'
-import { ValidatorRules } from '@/domain/@shared/validators/validator-rules'
+import { ValidationError } from '@/@shared/errors'
+import { ValidatorRules } from '@/@shared/validators/validator-rules'
 
 const makeSut = (value: any, property: string): ValidatorRules => {
   return ValidatorRules.values(value, property)
