@@ -103,4 +103,17 @@ describe('InMemoryRepository', () => {
       new NotFoundError('Entity with ID any_id not found')
     )
   })
+
+  it('should delete an entity', async () => {
+    const sut = makeSut()
+    const entity = new StubEntity({
+      name: 'any_name',
+      price: 10
+    })
+    sut.items.push(entity)
+
+    await sut.delete(entity.id)
+
+    expect(sut.items).toEqual([])
+  })
 })
