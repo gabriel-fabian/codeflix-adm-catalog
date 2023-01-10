@@ -65,4 +65,16 @@ describe('InMemoryRepository', () => {
 
     expect(foundEntries).toStrictEqual([entity1, entity2])
   })
+
+  it('should throw error on update when entity do not exist', async () => {
+    const sut = makeSut()
+    const entity = new StubEntity({
+      name: 'any_name',
+      price: 10
+    })
+
+    expect(sut.update(entity)).rejects.toThrow(
+      new NotFoundError(`Entity with ID ${entity.id} not found`)
+    )
+  })
 })
