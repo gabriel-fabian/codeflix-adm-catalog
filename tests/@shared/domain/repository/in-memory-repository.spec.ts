@@ -95,4 +95,12 @@ describe('InMemoryRepository', () => {
 
     expect(updatedEntity.toJSON()).toStrictEqual(sut.items[0].toJSON())
   })
+
+  it('should throw error on delete when entity do not exist', async () => {
+    const sut = makeSut()
+
+    expect(sut.delete('any_id')).rejects.toThrow(
+      new NotFoundError('Entity with ID any_id not found')
+    )
+  })
 })
