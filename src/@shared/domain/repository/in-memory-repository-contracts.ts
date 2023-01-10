@@ -18,19 +18,19 @@ export type SearchProps<Filter = string> = {
   filter?: Filter | null
 }
 
-export class SearchParams {
+export class SearchParams<Filter = string> {
   protected _page: number
   protected _per_page: number
   protected _sort: string | null
   protected _sort_dir: SortDirection | null
-  protected _filter: string | null
+  protected _filter: Filter | null
 
   constructor (props: SearchProps = {}) {
     this.page = props.page ?? 1
     this.per_page = props.per_page ?? 15
     this.sort = props.sort ?? null
     this.sort_dir = props.sort_dir ?? null
-    this.filter = props.filter ?? null
+    this.filter = props.filter ?? null as any
   }
 
   get page (): number {
@@ -85,12 +85,16 @@ export class SearchParams {
     this._sort_dir = dir !== 'asc' && dir !== 'desc' ? 'asc' : dir
   }
 
-  get filter (): string | null {
+  get filter (): Filter | null {
     return this._filter
   }
 
-  private set filter (value: string | null) {
-    this._filter = value === null || value === undefined || value === '' ? null : `${value}`
+  private set filter (value: Filter | null) {
+    this._filter =
+      value === null || value === undefined || (value as unknown) === ''
+        ? null
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        : (`${value}` as any)
   }
 }
 
