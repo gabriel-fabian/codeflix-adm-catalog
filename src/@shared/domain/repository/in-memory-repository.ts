@@ -1,5 +1,5 @@
 import { Entity } from '@/@shared/domain'
-import { InMemoryRepositoryInterface } from './in-repository-contracts'
+import { InMemoryRepositoryInterface, SearchableRepositoryInterface } from './in-memory-repository-contracts'
 import NotFoundError from '@/@shared/errors/not-found-error'
 
 export abstract class InMemoryRepository<E extends Entity> implements InMemoryRepositoryInterface<E> {
@@ -36,4 +36,10 @@ export abstract class InMemoryRepository<E extends Entity> implements InMemoryRe
     }
     return item
   }
+}
+
+export abstract class InMemorySearchableRepository<E extends Entity>
+  extends InMemoryRepository<E>
+  implements SearchableRepositoryInterface<E, any, any> {
+  search: (props: any) => Promise<any>
 }
