@@ -47,4 +47,22 @@ describe('InMemoryRepository', () => {
 
     expect(foundEntity).toStrictEqual(sut.items[0])
   })
+
+  it('should return all entries', async () => {
+    const sut = makeSut()
+    const entity1 = new StubEntity({
+      name: 'any_name',
+      price: 10
+    })
+    const entity2 = new StubEntity({
+      name: 'any_name2',
+      price: 20
+    })
+    sut.items.push(entity1)
+    sut.items.push(entity2)
+
+    const foundEntries = await sut.findAll()
+
+    expect(foundEntries).toStrictEqual([entity1, entity2])
+  })
 })
