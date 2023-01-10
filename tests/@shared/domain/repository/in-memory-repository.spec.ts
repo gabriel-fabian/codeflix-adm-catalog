@@ -77,4 +77,22 @@ describe('InMemoryRepository', () => {
       new NotFoundError(`Entity with ID ${entity.id} not found`)
     )
   })
+
+  it('should update an entity', async () => {
+    const sut = makeSut()
+    const entity = new StubEntity({
+      name: 'any_name',
+      price: 10
+    })
+    sut.items.push(entity)
+
+    const updatedEntity = new StubEntity({
+      name: 'updated_name',
+      price: 20
+    }, entity.uniqueEntityId)
+
+    await sut.update(updatedEntity)
+
+    expect(updatedEntity.toJSON()).toStrictEqual(sut.items[0].toJSON())
+  })
 })
