@@ -1,6 +1,6 @@
 import { UniqueEntityId } from '@/@shared/domain'
 
-export default abstract class Entity<Props> {
+export default abstract class Entity<Props = any> {
   public readonly uniqueEntityId: UniqueEntityId
 
   constructor (private readonly props: Props, id?: UniqueEntityId) {
