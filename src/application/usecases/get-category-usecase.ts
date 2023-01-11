@@ -1,7 +1,8 @@
 import { CategoryRepository } from '@/domain/repository'
 import { CategoryOutput } from '@/application/dto'
+import { UseCase } from '@/@shared/application'
 
-export class GetCategoryUseCase {
+export class GetCategoryUseCase implements UseCase<Input, CategoryOutput> {
   constructor (
     private readonly repository: CategoryRepository.Repository
   ) {}
