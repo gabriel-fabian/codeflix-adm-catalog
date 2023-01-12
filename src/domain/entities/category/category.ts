@@ -22,7 +22,7 @@ export class Category extends Entity<CategoryProps> {
   update (name: string, description: string): void {
     Category.validate({ name, description })
     this.props.name = name
-    this.props.description = description
+    this.props.description = description ?? ''
   }
 
   static validate (props: CategoryProps): void {
