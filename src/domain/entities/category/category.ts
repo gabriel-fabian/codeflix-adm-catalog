@@ -9,25 +9,20 @@ export type CategoryProps = {
   created_at?: Date
 }
 
+// Refactor: remove props manipulation
 export class Category extends Entity<CategoryProps> {
-  private _name: string
-  private _description: string
-  private _is_active: boolean
-  private readonly _created_at: Date
-
   constructor (props: CategoryProps, id?: UniqueEntityId) {
     Category.validate(props)
     super(props, id)
-    this._name = props.name
-    this._description = props.description ?? ''
-    this._is_active = props.is_active ?? false
-    this._created_at = props.created_at ?? new Date()
+    this.props.description = props.description ?? ''
+    this.props.is_active = props.is_active ?? false
+    this.props.created_at = props.created_at ?? new Date()
   }
 
   update (name: string, description: string): void {
     Category.validate({ name, description })
-    this._name = name
-    this._description = description
+    this.props.name = name
+    this.props.description = description
   }
 
   static validate (props: CategoryProps): void {
@@ -39,26 +34,26 @@ export class Category extends Entity<CategoryProps> {
   }
 
   activate (): void {
-    this._is_active = true
+    this.props.is_active = true
   }
 
   deactivate (): void {
-    this._is_active = false
+    this.props.is_active = false
   }
 
   get name (): string {
-    return this._name
+    return this.props.name
   }
 
   get description (): string {
-    return this._description
+    return this.props.description as string
   }
 
   get is_active (): boolean {
-    return this._is_active
+    return this.props.is_active as boolean
   }
 
   get created_at (): Date {
-    return this._created_at
+    return this.props.created_at as Date
   }
 }
