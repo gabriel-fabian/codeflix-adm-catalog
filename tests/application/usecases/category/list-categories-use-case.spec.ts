@@ -30,10 +30,7 @@ describe('ListCategoriesUseCase', () => {
     ]
     repository.items = items
 
-    console.log(items[0])
-
     const output = await sut.run({})
-    console.log(output)
     expect(output).toStrictEqual({
       items: [...items].reverse().map((i) => (i.toJSON())),
       total: 2,
