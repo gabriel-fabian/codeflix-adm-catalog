@@ -7,8 +7,6 @@
     "rootDirs": ["src", "tests"],
     "outDir": "./dist",
     "paths": {
-      /* The following options makes importing files easier.
-          It points `@` to `<rootDir>/src` and `@/tests/` to `<rootDir>/tests`. */
       "@/*": ["*"],
       "@/tests/*": ["../tests/*"]
     },
