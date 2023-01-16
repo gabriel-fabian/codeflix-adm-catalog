@@ -11,6 +11,6 @@
     "strictBindCallApply": false,
   },
   "include": [
-    "./src", "./test"
+    "./src", "./tests"
   ]
 }
