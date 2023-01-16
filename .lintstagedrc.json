@@ -1,6 +1,6 @@
 {
   "*.{ts,tsx}": [
-    "npm run lint:fix -w packages/@core",
+    "npm run lint:fix -ws",
     "npm run test:staged -w packages/@core"
   ]
 }

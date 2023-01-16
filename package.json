@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "description": "CodeFlix Admin Catalog",
   "workspaces":[
-    "./packages/@core"
+    "packages/@core",
+    "packages/nestjs"
   ],
   "scripts": {
     "start": "echo \"Error: no script defined\" && exit 1",
@@ -14,7 +15,8 @@
   "license": "GPL-3.0-or-later",
   "devDependencies": {
     "git-commit-msg-linter": "^4.4.0",
-    "husky": "^8.0.2"
+    "husky": "^8.0.2",
+    "lint-staged": "^13.1.0"
   },
   "engines": {
     "node": "19.x"
