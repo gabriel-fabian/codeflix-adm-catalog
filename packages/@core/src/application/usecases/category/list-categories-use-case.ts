@@ -1,6 +1,6 @@
 import { CategoryOutput } from '@/application/dto'
 import { UseCase } from '@/@shared/application'
-import { CategoryRepository } from '@/domain/repository'
+import { CategoryRepository } from '@/domain'
 import { SortDirection } from '@/@shared/domain'
 
 export class ListCategoriesUseCase implements UseCase<Input, Output> {

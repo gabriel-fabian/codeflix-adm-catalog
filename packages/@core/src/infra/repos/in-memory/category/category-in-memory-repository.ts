@@ -1,6 +1,5 @@
 import { InMemorySearchableRepository, SortDirection } from '@/@shared/domain'
-import { Category } from '@/domain/entities'
-import CategoryRepository from '@/domain/repository/category-repository'
+import { CategoryRepository, Category } from '@/domain'
 
 export class CategoryInMemoryRepository
   extends InMemorySearchableRepository<Category>

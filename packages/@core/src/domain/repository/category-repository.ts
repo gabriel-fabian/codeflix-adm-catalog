@@ -3,7 +3,7 @@ import {
   SearchParams as DefaultSearchParams,
   SearchResult as DefaultSearchResult
 } from '@/@shared/domain'
-import { Category } from '@/domain/entities'
+import { Category } from '@/domain'
 
 export namespace CategoryRepository {
   export type Filter = string

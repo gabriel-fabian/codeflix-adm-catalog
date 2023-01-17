@@ -1,6 +1,6 @@
-import { ListCategoriesUseCase } from '@/application/usecases/category'
-import { Category } from '@/domain/entities'
-import { CategoryInMemoryRepository } from '@/infra/repos/in-memory'
+import { ListCategoriesUseCase } from '@/application/usecases'
+import { Category } from '@/domain'
+import { CategoryInMemoryRepository } from '@/infra'
 
 type SutTypes = {
   sut: ListCategoriesUseCase

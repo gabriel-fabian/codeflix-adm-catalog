@@ -1,5 +1,5 @@
 import { EntityValidationError } from '@/@shared/errors'
-import { Category } from '@/domain/entities'
+import { Category } from '@/domain'
 
 describe('Category Integration', () => {
   describe('create method', () => {

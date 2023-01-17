@@ -1,4 +1,4 @@
-import { Category } from '@/domain/entities'
+import { Category } from '@/domain'
 
 import { faker } from '@faker-js/faker'
 

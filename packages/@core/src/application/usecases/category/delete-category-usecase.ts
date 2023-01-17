@@ -1,4 +1,4 @@
-import { CategoryRepository } from '@/domain/repository'
+import { CategoryRepository } from '@/domain'
 import { UseCase } from '@/@shared/application'
 
 export class DeleteCategoryUseCase implements UseCase<Input, void> {

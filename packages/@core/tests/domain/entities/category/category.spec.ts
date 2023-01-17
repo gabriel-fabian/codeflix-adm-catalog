@@ -1,4 +1,4 @@
-import { Category } from '@/domain/entities'
+import { Category } from '@/domain'
 import { mockCategory } from '@/tests/domain/mocks'
 
 import { faker } from '@faker-js/faker'

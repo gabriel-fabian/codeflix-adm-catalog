@@ -1,4 +1,4 @@
-import { CategoryValidator, makeCategoryValidator } from '@/domain/entities/validators'
+import { CategoryValidator, makeCategoryValidator } from '@/domain'
 
 describe('CategoryValidator', () => {
   let validator: CategoryValidator

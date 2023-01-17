@@ -1,5 +1,5 @@
 import { ClassValidator } from '@/@shared/validators'
-import { CategoryProps } from '@/domain/entities'
+import { CategoryProps } from '@/domain'
 import { IsBoolean, IsDate, IsNotEmpty, IsOptional, IsString, MaxLength } from 'class-validator'
 
 class ValidateProps {

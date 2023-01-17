@@ -1,5 +1,5 @@
-import { CreateCategoryUseCase } from '@/application/usecases/category'
-import { CategoryInMemoryRepository } from '@/infra/repos/in-memory'
+import { CreateCategoryUseCase } from '@/application/usecases'
+import { CategoryInMemoryRepository } from '@/infra'
 
 type SutTypes = {
   sut: CreateCategoryUseCase

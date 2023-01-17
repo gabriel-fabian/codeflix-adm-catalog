@@ -1,4 +1,4 @@
-import { CategoryRepository } from '@/domain/repository'
+import { CategoryRepository } from '@/domain'
 import { CategoryOutput } from '@/application/dto'
 import { UseCase } from '@/@shared/application'
 

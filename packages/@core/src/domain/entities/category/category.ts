@@ -1,6 +1,6 @@
 import { Entity, UniqueEntityId } from '@/@shared/domain'
 import { EntityValidationError } from '@/@shared/errors'
-import { makeCategoryValidator } from '@/domain/entities/validators'
+import { makeCategoryValidator } from '@/domain'
 
 export type CategoryProps = {
   name: string
