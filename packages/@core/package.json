@@ -3,7 +3,9 @@
   "version": "0.0.1",
   "description": "CodeFlix Admin Catalog",
   "exports": {
-    "./domain/entities": "./dist/domain/entities/index.js"
+    "./domain": "./dist/domain/index.js",
+    "./application": "./dist/application/index.js",
+    "./infra": "./dist/infra/index.js"
   },
   "scripts": {
     "start": "echo \"Error: no script defined\" && exit 1",
