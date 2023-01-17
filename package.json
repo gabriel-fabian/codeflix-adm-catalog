@@ -2,7 +2,7 @@
   "name": "codeflix-adm-catalog",
   "version": "0.0.1",
   "description": "CodeFlix Admin Catalog",
-  "workspaces":[
+  "workspaces": [
     "packages/@core",
     "packages/nestjs"
   ],
