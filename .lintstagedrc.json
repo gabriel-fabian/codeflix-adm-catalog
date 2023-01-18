@@ -1,6 +1,12 @@
 {
-  "*.{ts,tsx}": [
-    "npm run lint:fix",
-    "npm run test:staged"
+  "*/@core/**/*.{ts,tsx}": [
+    "npm run lint:fix -w micro-videos",
+    "npm run test:staged -w micro-videos"
+
+  ],
+
+  "*/nestjs/**/*.{ts,tsx}": [
+    "npm run lint:fix -w nestjs",
+    "npm run test -w nestjs"
   ]
 }
