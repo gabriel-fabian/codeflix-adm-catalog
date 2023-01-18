@@ -1,5 +1,5 @@
 import { CategoryRepository } from '@/domain'
-import { CategoryOutput } from '@/application/dto'
+import { CategoryOutput } from '@/application'
 import { UseCase } from '@/@shared/application'
 
 export class UpdateCategoryUseCase implements UseCase<Input, CategoryOutput> {

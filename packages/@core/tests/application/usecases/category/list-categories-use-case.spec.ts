@@ -1,4 +1,4 @@
-import { ListCategoriesUseCase } from '@/application/usecases'
+import { ListCategoriesUseCase } from '@/application'
 import { Category } from '@/domain'
 import { CategoryInMemoryRepository } from '@/infra'
 

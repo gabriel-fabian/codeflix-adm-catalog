@@ -1,4 +1,4 @@
-import { CategoryOutput } from '@/application/dto'
+import { CategoryOutput } from '@/application'
 import { UseCase } from '@/@shared/application'
 import { CategoryRepository } from '@/domain'
 import { SortDirection } from '@/@shared/domain'

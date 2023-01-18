@@ -7,6 +7,19 @@
     "./application": "./dist/application/index.js",
     "./infra": "./dist/infra/index.js"
   },
+  "typesVersions": {
+    ">=4.0": {
+      "domain": [
+        "./dist/domain/index.d.ts"
+      ],
+      "application":[
+        "./dist/application/index.d.ts"
+      ],
+      "infra": [
+        "./dist/infra/index.d.ts"
+      ]
+    }
+  },
   "scripts": {
     "start": "echo \"Error: no script defined\" && exit 1",
     "build": "rimraf dist && tsc -p tsconfig.build.json && tsc-alias -p tsconfig.json",

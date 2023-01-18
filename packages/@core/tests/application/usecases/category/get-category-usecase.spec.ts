@@ -1,5 +1,5 @@
 import NotFoundError from '@/@shared/errors/not-found-error'
-import { GetCategoryUseCase } from '@/application/usecases'
+import { GetCategoryUseCase } from '@/application'
 import { Category } from '@/domain'
 import { CategoryInMemoryRepository } from '@/infra'
 
