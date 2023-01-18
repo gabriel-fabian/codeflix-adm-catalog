@@ -1,4 +1,4 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-npm run test:ci -w packages/@core
+npm run test:ci -w micro-videos && npm run test:cov -w nestjs
