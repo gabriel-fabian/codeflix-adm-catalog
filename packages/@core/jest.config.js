@@ -1,4 +1,8 @@
 module.exports = {
+  displayName: {
+    name: '@core',
+    color: 'blue'
+  },
   transform: {
     '.+\\.(ts|tsx)$': 'ts-jest'
   },

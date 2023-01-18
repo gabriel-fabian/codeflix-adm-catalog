@@ -10,6 +10,7 @@
     "start": "echo \"Error: no script defined\" && exit 1",
     "prestart:dev": "npm run build -w micro-videos",
     "start:dev": "npm run build -w micro-videos -- -w & npm run start:dev -w nestjs",
+    "test": "jest",
     "test:core": "npm run test -w packages/@core",
     "prepare": "husky install"
   },
