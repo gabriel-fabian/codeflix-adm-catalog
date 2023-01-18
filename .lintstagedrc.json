@@ -6,6 +6,7 @@
   ],
 
   "*/nestjs/**/*.{ts,tsx}": [
-    "npm run lint:fix -w nestjs"
+    "npm run lint:fix -w nestjs",
+    "npm run test -w nestjs"
   ]
 }
