@@ -9,7 +9,10 @@ module.exports = {
     'json',
     'ts'
   ],
-  rootDir: 'src',
+  roots: [
+    '<rootDir>/src',
+    '<rootDir>/tests'
+  ],
   testRegex: '.*\\.spec\\.ts$',
   transform: {
     '^.+\\.(t|j)s$': 'ts-jest'
