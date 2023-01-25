@@ -3,12 +3,16 @@
   "version": "0.0.1",
   "description": "CodeFlix Admin Catalog",
   "exports": {
+    "./@shared": "./dist/@shared/index.js",
     "./domain": "./dist/domain/index.js",
     "./application": "./dist/application/index.js",
     "./infra": "./dist/infra/index.js"
   },
   "typesVersions": {
     ">=4.0": {
+      "@shared": [
+        "./dist/@shared/index.d.ts"
+      ],
       "domain": [
         "./dist/domain/index.d.ts"
       ],
@@ -22,7 +26,7 @@
   },
   "scripts": {
     "start": "echo \"Error: no script defined\" && exit 1",
-    "build": "rimraf dist && tsc -p tsconfig.build.json && tsc-alias -p tsconfig.json",
+    "build": "tsc -p tsconfig.build.json && tsc-alias -p tsconfig.json",
     "lint": "eslint .",
     "lint:fix": "npm run lint -- --fix",
     "test": "jest --passWithNoTests --silent --noStackTrace --runInBand --no-cache",
